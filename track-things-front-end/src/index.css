@@ -1,0 +1,75 @@
+body {
+  color: #484848;
+  font-family: sans-serif;
+  margin: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, .logo {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: auto;
+  height: 100px;
+}
+
+a {
+  color: #484848;
+  text-decoration: none !important;
+  margin-left: 1em;
+}
+
+a:visited {
+  color: #484848 !important;
+}
+
+a:hover {
+  color: #aaaaaa !important;
+}
+
+.logo, .accent {
+  color: #00a699 !important;
+}
+
+.welcome-card {
+  margin: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.home-card {
+  margin: 1em auto;
+}
+
+.display {
+  display: flex;
+  justify-content: space-between;
+  margin: 3em auto;
+}
+
+.unseen, .seen {
+  width: 49%;
+  text-align: center;
+}
+
+.media-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em auto;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.thin {
+  font-weight: 400;
+}

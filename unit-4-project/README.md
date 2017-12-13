@@ -19,10 +19,6 @@
 
 - deployed to AWS
 
-# user stories
-
-trello board: [https://trello.com/b/eQYgoT9M](https://trello.com/b/eQYgoT9M)
-
 ## erd
 
 ![erd](/assets/erd.png)

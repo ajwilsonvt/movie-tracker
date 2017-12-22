@@ -35,7 +35,6 @@ class Media extends Component {
             </div>
           )
         })
-        this.setState({unseenMedias: unseenMedias})
 
         fetch(url + 'seen')
           .then(response => response.json())
@@ -52,7 +51,11 @@ class Media extends Component {
                 </div>
               )
             })
-            this.setState({seenMedias: seenMedias})
+
+            this.setState({
+              unseenMedias: unseenMedias,
+              seenMedias: seenMedias
+            })
           })
       })
   }
@@ -101,9 +104,9 @@ class Media extends Component {
             else throw new Error(response.statusText)
           })
           .then(data => {
-            // show the user successful response
-            // whether 'db updated' or 'already exists'
             console.log('success', data)
+
+            this.initialize()
           })
           .catch(error => console.error('Internal Server', error))
       })

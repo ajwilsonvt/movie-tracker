@@ -5,7 +5,6 @@ const Welcome = props => (
     <div>
       <h1 className="accent bold">TrackThings</h1>
       <h1 className="thin">Track the things that matter...</h1>
-      <h1 className="thin">like movies and TV shows.</h1>
     </div>
   </div>
 )

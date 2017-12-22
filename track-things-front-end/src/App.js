@@ -34,12 +34,12 @@ class App extends Component {
               </nav>
             </header>
             <Route exact path="/" component={Welcome} />
-            <Route path="/jos" component={Media} />
-            <Route path="/workouts" component={Media} />
-            <Route path="/meals" component={Media} />
-            <Route path="/travel" component={Media} />
-            <Route path="/overspending" component={Media} />
-            <Route path="/driving" component={Media} />
+            <Route path="/jos" component={Welcome} />
+            <Route path="/workouts" component={Welcome} />
+            <Route path="/meals" component={Welcome} />
+            <Route path="/travel" component={Welcome} />
+            <Route path="/overspending" component={Welcome} />
+            <Route path="/driving" component={Welcome} />
             <Route path="/media" component={Media} />
           </div>
         </Router>

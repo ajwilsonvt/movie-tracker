@@ -19,6 +19,17 @@
 
 - deployed to AWS
 
+## erd
+
+![erd](assets/erd.png)
+
+## wireframes
+
+![wireframe-1](assets/wireframe-1.png)
+![wireframe-2](assets/wireframe-2.png)
+![wireframe-3](assets/wireframe-3.png)
+![wireframe-4](assets/wireframe-4.png)
+
 ## technologies used
 
 - react

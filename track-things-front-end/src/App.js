@@ -6,9 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Welcome from './Welcome'
-import Home from './Home'
-import SignUp from './SignUp'
-import LogIn from './LogIn'
+import Media from './Media'
 
 class App extends Component {
   constructor(props) {
@@ -17,33 +15,32 @@ class App extends Component {
   }
 
   render() {
-    var nav = ''
-    if (this.state.loggedIn) {
-      nav = <nav>
-              <Link to="/profile">Profile</Link>
-              <a href="http://localhost:3000/logout">Log Out</a>
-            </nav>
-    } else {
-      nav = <nav>
-              <Link to="/signup">Sign Up</Link>
-              <Link to="/login">Log In</Link>
-            </nav>
-    }
-
     return (
       <div>
         <Router>
           <div>
             <header>
-              <Link to={this.state.loggedIn ? "/home" : "/"} className="logo">
+              <Link to={"/"} className="logo">
                 <h1 className="thin">T</h1>
               </Link>
-              {nav}
+              <nav>
+                <Link to="/jos">JOs</Link>
+                <Link to="/workouts">Workouts</Link>
+                <Link to="/meals">Meals</Link>
+                <Link to="/travel">Travel</Link>
+                <Link to="/overspending">Overspending</Link>
+                <Link to="/driving">Driving</Link>
+                <Link to="/media">Media</Link>
+              </nav>
             </header>
             <Route exact path="/" component={Welcome} />
-            <Route path="/home" component={Home} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/login" component={LogIn} />
+            <Route path="/jos" component={Media} />
+            <Route path="/workouts" component={Media} />
+            <Route path="/meals" component={Media} />
+            <Route path="/travel" component={Media} />
+            <Route path="/overspending" component={Media} />
+            <Route path="/driving" component={Media} />
+            <Route path="/media" component={Media} />
           </div>
         </Router>
       </div>

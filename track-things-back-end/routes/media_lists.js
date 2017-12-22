@@ -17,7 +17,10 @@ router.get('/:status', (req, res) => {
         return {id: el.media_id};
       });
 
-      return db.media.findAll({where: {$or: arr}})
+      return db.media.findAll({
+        where: {$or: arr},
+        order: [['rating', 'DESC']]
+      });
     })
     .then(media => res.json(media))
     .catch(err => {
@@ -29,7 +32,7 @@ router.get('/:status', (req, res) => {
 
 router.put('/:id', (req, res) => {
   db.media_list_media.find({where: {
-    media_list_id: 2, // needs to be refactored for multiple users
+    media_list_id: 1, // refactor for multiple users and lists
     media_id: req.params.id
   }})
     .then(row => {

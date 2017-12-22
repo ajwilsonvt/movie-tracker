@@ -22,7 +22,14 @@ router.post('/', (req, res) => {
           release_date: media.release_date,
           overview: media.overview
         })
-          .then(() => res.json('updated db'))
+          .then(m => {
+            db.media_list_media.create({
+              media_list_id: 1, // refactor for multiple users and lists
+              media_id: m.id,
+              media_status: 'unseen',
+              media_notes: null
+            });
+          })
           .catch(err => {
             console.log(err);
 

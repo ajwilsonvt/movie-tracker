@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const API_KEY = '65c3211ef9289b84310d59dbe3f5888f'
 
-class Home extends Component {
+class Media extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,7 +18,7 @@ class Home extends Component {
   }
 
   initialize() {
-    var url = 'http://localhost:3000/media_lists/'
+    var url = 'http://localhost:3002/media_lists/'
 
     fetch(url + 'unseen')
       .then(response => response.json())
@@ -28,9 +28,9 @@ class Home extends Component {
             <div className="form-control media-box"
                  key={media.id}
                  id={media.id}
-                 onClick={this.handleMediaBoxClick}>
+                 onClick={e => this.handleMediaBoxClick(e, 'unseen')}>
               <img src={media.tmdb_poster} alt="poster" />
-              <p>{media.title}</p>
+              <p className="title">{media.title}</p>
               <p>{media.rating}</p>
             </div>
           )
@@ -44,9 +44,10 @@ class Home extends Component {
               return (
                 <div className="form-control media-box"
                      key={media.id}
-                     onClick={this.handleMediaBoxClick}>
+                     id={media.id}
+                     onClick={e => this.handleMediaBoxClick(e, 'seen')}>
                   <img src={media.tmdb_poster} alt="poster" />
-                  <p>{media.title}</p>
+                  <span className="title"><p>{media.title}</p></span>
                   <p>{media.rating}</p>
                 </div>
               )
@@ -72,7 +73,7 @@ class Home extends Component {
         console.log('API Success: first result', data.results[0])
 
         var media = data.results[0]
-        myRequest = new Request('http://localhost:3000/media', {
+        myRequest = new Request('http://localhost:3002/media', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -109,15 +110,17 @@ class Home extends Component {
       .catch(error => console.error('API', error))
   }
 
-  handleMediaBoxClick(event) {
-    var myRequest = new Request('http://localhost:3000/media_lists/' + event.target.id, {
+  handleMediaBoxClick(event, status) {
+    console.log(event.currentTarget.id, status)
+
+    var myRequest = new Request('http://localhost:3002/media_lists/' + event.currentTarget.id, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        media_status: 'seen'
+        media_status: status === 'seen' ? 'unseen' : 'seen'
       })
     })
 
@@ -158,4 +161,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Media

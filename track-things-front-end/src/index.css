@@ -10,7 +10,7 @@ header {
   align-items: center;
 }
 
-h1, .logo {
+h1, .logo, .media-box p {
   margin: 0;
   padding: 0;
 }
@@ -61,9 +61,18 @@ a:hover {
 
 .media-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 1em auto;
+}
+
+.media-box .title {
+  width: 45%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
 }
 
 .bold {

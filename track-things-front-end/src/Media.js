@@ -107,6 +107,7 @@ class Media extends Component {
             console.log('success', data)
 
             this.initialize()
+            this.setState({value: ''})
           })
           .catch(error => console.error('Internal Server', error))
       })

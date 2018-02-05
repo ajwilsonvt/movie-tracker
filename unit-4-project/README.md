@@ -1,6 +1,4 @@
-# track-things
-
-### unit-4-project
+# movie-tracker
 
 ## requirements
 
@@ -21,14 +19,14 @@
 
 ## erd
 
-![erd](assets/erd.png)
+![erd](diagrams/erd.png)
 
 ## wireframes
 
-![wireframe-1](assets/wireframe-1.png)
-![wireframe-2](assets/wireframe-2.png)
-![wireframe-3](assets/wireframe-3.png)
-![wireframe-4](assets/wireframe-4.png)
+![wireframe-1](diagrams/wireframe-1.png)
+![wireframe-2](diagrams/wireframe-2.png)
+![wireframe-3](diagrams/wireframe-3.png)
+![wireframe-4](diagrams/wireframe-4.png)
 
 ## technologies used
 

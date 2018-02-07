@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const API_KEY = '65c3211ef9289b84310d59dbe3f5888f'
 
-class Media extends Component {
+class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,7 +18,7 @@ class Media extends Component {
   }
 
   initialize() {
-    var url = 'http://localhost:3002/media_lists/'
+    var url = 'http://localhost:3000/media_lists/'
 
     fetch(url + 'unseen')
       .then(response => response.json())
@@ -28,13 +28,14 @@ class Media extends Component {
             <div className="form-control media-box"
                  key={media.id}
                  id={media.id}
-                 onClick={e => this.handleMediaBoxClick(e, 'unseen')}>
+                 onClick={this.handleMediaBoxClick}>
               <img src={media.tmdb_poster} alt="poster" />
-              <p className="title">{media.title}</p>
+              <p>{media.title}</p>
               <p>{media.rating}</p>
             </div>
           )
         })
+        this.setState({unseenMedias: unseenMedias})
 
         fetch(url + 'seen')
           .then(response => response.json())
@@ -43,19 +44,14 @@ class Media extends Component {
               return (
                 <div className="form-control media-box"
                      key={media.id}
-                     id={media.id}
-                     onClick={e => this.handleMediaBoxClick(e, 'seen')}>
+                     onClick={this.handleMediaBoxClick}>
                   <img src={media.tmdb_poster} alt="poster" />
-                  <span className="title"><p>{media.title}</p></span>
+                  <p>{media.title}</p>
                   <p>{media.rating}</p>
                 </div>
               )
             })
-
-            this.setState({
-              unseenMedias: unseenMedias,
-              seenMedias: seenMedias
-            })
+            this.setState({seenMedias: seenMedias})
           })
       })
   }
@@ -76,7 +72,7 @@ class Media extends Component {
         console.log('API Success: first result', data.results[0])
 
         var media = data.results[0]
-        myRequest = new Request('http://localhost:3002/media', {
+        myRequest = new Request('http://localhost:3000/media', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -104,27 +100,24 @@ class Media extends Component {
             else throw new Error(response.statusText)
           })
           .then(data => {
+            // show the user successful response
+            // whether 'db updated' or 'already exists'
             console.log('success', data)
-
-            this.initialize()
-            this.setState({value: ''})
           })
           .catch(error => console.error('Internal Server', error))
       })
       .catch(error => console.error('API', error))
   }
 
-  handleMediaBoxClick(event, status) {
-    console.log(event.currentTarget.id, status)
-
-    var myRequest = new Request('http://localhost:3002/media_lists/' + event.currentTarget.id, {
+  handleMediaBoxClick(event) {
+    var myRequest = new Request('http://localhost:3000/media_lists/' + event.target.id, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        media_status: status === 'seen' ? 'unseen' : 'seen'
+        media_status: 'seen'
       })
     })
 
@@ -165,4 +158,4 @@ class Media extends Component {
   }
 }
 
-export default Media
+export default Home

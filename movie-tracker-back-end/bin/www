@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('track-things-back-end:server');
+var debug = require('debug')('movie-tracker-back-end:server');
 var http = require('http');
 
 /**

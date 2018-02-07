@@ -1,4 +1,4 @@
-# track-things
+# movie-tracker
 
 ### unit-4-project-back-end
 

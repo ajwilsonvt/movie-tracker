@@ -1,0 +1,153 @@
+body {
+  color: #484848;
+  font-family: sans-serif;
+  margin: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, .logo, .media-box p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: auto;
+  height: 100px;
+}
+
+a {
+  color: #484848;
+  text-decoration: none !important;
+  margin-left: 1em;
+}
+
+a:visited {
+  color: #484848 !important;
+}
+
+a:hover {
+  color: #aaaaaa !important;
+}
+
+.medialists-card {
+  margin: 3em auto;
+  text-align: center;
+}
+
+.medialist-modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.medialist-modal {
+  position: fixed;
+  top: 2em;
+  left: 25%;
+  width: 50%;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  padding: 1em;
+  text-align: center;
+  z-index: 2;
+}
+
+.media-box-wrapper {
+  margin: 1em auto;
+  cursor: pointer;
+}
+
+.media-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.media-box .title {
+  width: 45%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.exit-btn {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.logo, .accent {
+  color: #00a699 !important;
+}
+
+.welcome-card {
+  margin: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.home-card {
+  margin: 1em auto;
+}
+
+.display {
+  display: flex;
+  justify-content: space-between;
+  margin: 3em auto;
+}
+
+.unseen, .seen {
+  width: 49%;
+  text-align: center;
+}
+
+.lists-close-position {
+  position: relative;
+  top: 5px;
+  left: .4em;
+}
+
+.list-close-position {
+  position: relative;
+  top: -108px;
+  right: -7px;
+}
+
+.note-button {
+  margin: 1em 1em 0 1em;
+}
+
+.block {
+  display: block;
+  margin: 1em auto;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.thin {
+  font-weight: 400;
+}
+
+.pointer {
+  cursor: pointer;
+}

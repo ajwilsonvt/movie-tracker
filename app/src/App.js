@@ -19,16 +19,16 @@ class App extends Component {
         <Router>
           <div>
             <header>
-              <Link to="" className="logo">
+              <Link to="/movietracker" className="logo">
                 <h1 className="thin">M</h1>
               </Link>
               <nav>
-                <Link to="/medialists">Media Lists</Link>
+                <Link to="/movietracker/medialists">Media Lists</Link>
               </nav>
             </header>
-            <Route exact path="" component={Welcome} />
-            <Route exact path="/medialists" component={MediaLists} />
-            <Route exact path="/medialists/:mediaListId" component={MediaList} />
+            <Route exact path="/movietracker" component={Welcome} />
+            <Route exact path="/movietracker/medialists" component={MediaLists} />
+            <Route exact path="/movietracker/medialists/:mediaListId" component={MediaList} />
           </div>
         </Router>
         <a href="/profile">

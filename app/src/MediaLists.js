@@ -27,7 +27,7 @@ class MediaLists extends Component {
         const lists = data.mediaLists.map(mediaList => (
           <div key={mediaList.id} className="block">
             <div className="inline-block">
-              <Link to={`/medialists/${mediaList.id}`}>
+              <Link to={`/movietracker/medialists/${mediaList.id}`}>
                 <button className="btn btn-primary pointer">
                   {mediaList.name}
                 </button>
